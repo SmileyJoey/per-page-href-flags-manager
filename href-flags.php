@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Per Page Href Flags Manager
  * Description: This plugin adds Href links on per page level including a flag.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Better Collective - Hanning Høegh
  * License: GPL2
  */
@@ -67,14 +67,14 @@ function plugin_scripts_stylesheets() {
     NOTICE ABOUT ACF PRO
 \*-------------------------*/
 
-function check_for_acf() {
+function check_if_acf_exists() {
     if( !class_exists('acf') ) : ?>
         <div class="notice notice-error is-dismissible">
             <p>You need to install &amp; activate ACF PRO to make Hreflang plugin work!</p>
         </div>
     <?php endif;
 }
-add_action('admin_init', 'check_for_acf');
+add_action('admin_init', 'check_if_acf_exists');
 
 
 
