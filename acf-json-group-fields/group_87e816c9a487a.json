@@ -1,0 +1,139 @@
+{
+    "key": "group_87e816c9a487a",
+    "title": "Hreflang",
+    "fields": [
+        {
+            "key": "field_56e67e3e10fca",
+            "label": "Hreflang",
+            "name": "hreflang",
+            "type": "repeater",
+            "value": null,
+            "instructions": "You can leave the Flag field empty and the script will automatically fetch the correct flag <b>based on country<\/b> part of hreflang.<br\/>\r\nYou can use the Flag field if you want to overwrite this automatic adjustment (uppercase Country Code).<br\/>\r\nMore info:<br\/>\r\n<a href=\"https:\/\/support.google.com\/webmasters\/answer\/189077?hl=en\" target=\"_blank\">https:\/\/support.google.com\/webmasters\/answer\/189077?hl=en<\/a><br\/>\r\n<a href=\"https:\/\/audisto.com\/insights\/guides\/30\" target=\"_blank\">https:\/\/audisto.com\/insights\/guides\/30<\/a><br\/>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add hreflang",
+            "sub_fields": [
+                {
+                    "key": "field_56e6803d9a71c",
+                    "label": "Hreflang tag",
+                    "name": "hreflang_tag",
+                    "type": "text",
+                    "value": null,
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": 15,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "hreflang=",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_56e680149a71b",
+                    "label": "Link to page",
+                    "name": "href_link",
+                    "type": "text",
+                    "value": null,
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": 65,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "href=",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_57160ff89da29",
+                    "label": "Flag",
+                    "name": "hreflang_flag",
+                    "type": "text",
+                    "value": null,
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": 10,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5735994b748ef",
+                    "label": "Active",
+                    "name": "hreflang_active",
+                    "type": "true_false",
+                    "value": null,
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": 10,
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 250,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1507821175
+}

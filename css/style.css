@@ -1,0 +1,303 @@
+#language-container .language-text,
+#language-container .languages {
+  display: block;
+}
+#language-container .language-text {
+  margin: 10px;
+}
+#language-container .language-flag {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin: 0px 3px;
+}
+#language-container .language-flag.active {
+  opacity: 0.3;
+}
+
+.navbar .navbar-languages ul.dropdown-menu {
+  width: 100%;
+  min-width: 0px;
+}
+.navbar .navbar-languages ul.dropdown-menu li {
+  text-align: left;
+}
+
+[class^="flag-20"]:not(.menu-item) {
+  background-image: url(../images/languages_20.png);
+}
+
+.menu-item[class^="flag-20"] > a:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-image: url(../images/languages_20.png);
+  top: 5px;
+  position: relative;
+  margin-right: 3px;
+}
+
+/* A */
+.flag-20-Albania,
+.flag-20-Albania.menu-item > a:before {
+  background-position: 0px -20px;
+}
+
+.flag-20-Australia,
+.flag-20-Australia.menu-item > a:before {
+  background-position: -20px -60px;
+}
+
+.flag-20-Austria,
+.flag-20-Austria.menu-item > a:before {
+  background-position: -40px -60px;
+}
+
+/* B */
+.flag-20-Brazil,
+.flag-20-Brazil.menu-item > a:before {
+  background-position: -40px -100px;
+}
+
+.flag-20-Bulgaria,
+.flag-20-Bulgaria.menu-item > a:before {
+  background-position: -120px 0px;
+}
+
+/* C */
+.flag-20-Canada,
+.flag-20-Canada.menu-item > a:before {
+  background-position: 0px -120px;
+}
+
+.flag-20-China,
+.flag-20-China.menu-item > a:before {
+  background-position: -140px 0px;
+}
+
+.flag-20-Croatian,
+.flag-20-Croatian.menu-item > a:before {
+  background-position: -40px -140px;
+}
+
+.flag-20-Czech-republic,
+.flag-20-Czech-republic.menu-item > a:before {
+  background-position: -120px -140px;
+}
+
+/* D */
+.flag-20-Denmark,
+.flag-20-Denmark.menu-item > a:before {
+  background-position: -140px -140px;
+}
+
+/* F */
+.flag-20-Finland,
+.flag-20-Finland.menu-item > a:before {
+  background-position: -180px 0px;
+}
+
+.flag-20-France,
+.flag-20-France.menu-item > a:before {
+  background-position: -180px -20px;
+}
+
+/* G */
+.flag-20-Germany,
+.flag-20-Germany.menu-item > a:before {
+  background-position: -180px -140px;
+}
+
+.flag-20-Greece,
+.flag-20-Greece.menu-item > a:before {
+  background-position: -20px -180px;
+}
+
+/* H */
+.flag-20-Hong-kong,
+.flag-20-Hong-kong.menu-item > a:before {
+  background-position: -200px -80px;
+}
+
+.flag-20-Hungary,
+.flag-20-Hungary.menu-item > a:before {
+  background-position: -200px -100px;
+}
+
+/* I */
+.flag-20-India,
+.flag-20-India.menu-item > a:before {
+  background-position: -200px -140px;
+}
+
+.flag-20-Indonesia,
+.flag-20-Indonesia.menu-item > a:before {
+  background-position: -200px -160px;
+}
+
+.flag-20-Ireland,
+.flag-20-Ireland.menu-item > a:before {
+  background-position: -20px -200px;
+}
+
+.flag-20-Italy,
+.flag-20-Italy.menu-item > a:before {
+  background-position: -80px -200px;
+}
+
+/* J */
+.flag-20-Japan,
+.flag-20-Japan.menu-item > a:before {
+  background-position: -160px -200px;
+}
+
+/* K */
+.flag-20-Kazakhstan,
+.flag-20-Kazakhstan.menu-item > a:before {
+  background-position: -220px -20px;
+}
+
+.flag-20-Kenya,
+.flag-20-Kenya.menu-item > a:before {
+  background-position: -220px -40px;
+}
+
+/* L */
+.flag-20-Latvia,
+.flag-20-Latvia.menu-item > a:before {
+  background-position: -220px -180px;
+}
+
+/* M */
+.flag-20-Malaysia,
+.flag-20-Malaysia.menu-item > a:before {
+  background-position: -200px -220px;
+}
+
+.flag-20-Mexico,
+.flag-20-Mexico.menu-item > a:before {
+  background-position: -240px -140px;
+}
+
+/* N */
+.flag-20-Netherlands,
+.flag-20-Netherlands.menu-item > a:before {
+  background-position: -180px -240px;
+}
+
+.flag-20-New-zealand,
+.flag-20-New-zealand.menu-item > a:before {
+  background-position: -220px -240px;
+}
+
+.flag-20-Nigeria,
+.flag-20-Nigeria.menu-item > a:before {
+  background-position: -260px -20px;
+}
+
+.flag-20-Norway,
+.flag-20-Norway.menu-item > a:before {
+  background-position: -260px -140px;
+}
+
+/* P */
+.flag-20-Philippines,
+.flag-20-Philippines.menu-item > a:before {
+  background-position: -60px -260px;
+}
+
+.flag-20-Poland,
+.flag-20-Poland.menu-item > a:before {
+  background-position: -100px -260px;
+}
+
+.flag-20-Portugal,
+.flag-20-Portugal.menu-item > a:before {
+  background-position: -120px -260px;
+}
+
+/* R */
+.flag-20-Romania,
+.flag-20-Romania.menu-item > a:before {
+  background-position: -200px -260px;
+}
+
+.flag-20-Russia,
+.flag-20-Russia.menu-item > a:before {
+  background-position: -220px -260px;
+}
+
+/* S */
+.flag-20-Serbia,
+.flag-20-Serbia.menu-item > a:before {
+  background-position: 0px -280px;
+}
+
+.flag-20-Slovenia,
+.flag-20-Slovenia.menu-item > a:before {
+  background-position: -140px -280px;
+}
+
+.flag-20-South-africa,
+.flag-20-South-africa.menu-item > a:before {
+  background-position: -220px -280px;
+}
+
+.flag-20-Spain,
+.flag-20-Spain.menu-item > a:before {
+  background-position: -280px -280px;
+}
+
+.flag-20-Sweden,
+.flag-20-Sweden.menu-item > a:before {
+  background-position: -300px -140px;
+}
+
+.flag-20-Switzerland,
+.flag-20-Switzerland.menu-item > a:before {
+  background-position: -300px -160px;
+}
+
+/* T */
+.flag-20-Tanzania,
+.flag-20-Tanzania.menu-item > a:before {
+  background-position: -300px -240px;
+}
+
+.flag-20-Thailand,
+.flag-20-Thailand.menu-item > a:before {
+  background-position: -300px -260px;
+}
+
+.flag-20-Tunisia,
+.flag-20-Tunisia.menu-item > a:before {
+  background-position: -80px -300px;
+}
+
+.flag-20-Turkey,
+.flag-20-Turkey.menu-item > a:before {
+  background-position: -100px -300px;
+}
+
+/* U */
+.flag-20-Uganda,
+.flag-20-Uganda.menu-item > a:before {
+  background-position: -180px -300px;
+}
+
+.flag-20-United-kingdom,
+.flag-20-United-kingdom.menu-item > a:before {
+  background-position: -240px -300px;
+}
+
+.flag-20-United-states,
+.flag-20-United-states.menu-item > a:before {
+  background-position: -260px -300px;
+}
+
+/* V */
+.flag-20-Vietnam,
+.flag-20-Vietnam.menu-item > a:before {
+  background-position: -320px -60px;
+}
