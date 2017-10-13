@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Per Page Href Flags Manager
  * Description: This plugin adds Href links on per page level including a flag.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Better Collective - Hanning Høegh
  * License: GPL2
  */
@@ -15,7 +15,7 @@ define( 'HF_PATH', plugin_dir_path( __FILE__ ) );
 require 'plugin-update-checker/plugin-update-checker.php';
 $className = PucFactory::getLatestClassVersion('PucGitHubChecker');
 $myUpdateChecker = new $className(
-    'https://github.com/SmileyJoey/per-page-href-flags-manager.git',
+    'https://github.com/SmileyJoey/per-page-href-flags-manager/',
     __FILE__,
     'master'
 );
