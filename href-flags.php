@@ -26,7 +26,7 @@ define( 'HF_PATH', plugin_dir_path( __FILE__ ) );
 add_action('wp_enqueue_scripts', 'plugin_scripts_stylesheets');
 function plugin_scripts_stylesheets() {
 	if ( is_single() || is_page()  ) {
-		wp_enqueue_style('href-flags-manager', HF_PATH . 'css/style.css' );
+		wp_enqueue_style('href-flags-manager', plugin_dir_path( __FILE__ ) . 'css/style.css' );
 	}
 }
 
