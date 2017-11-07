@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Per Page Href Flags Manager
  * Description: This plugin adds Href links on per page level including a flag.
- * Version: 1.0.4
+ * Version: 1.0.5
  * Author: Better Collective - Hanning Høegh
  * License: GPL2
  */
@@ -26,7 +26,7 @@ $myUpdateChecker = new $className(
 add_action('wp_enqueue_scripts', 'plugin_scripts_stylesheets');
 function plugin_scripts_stylesheets() {
 	if ( is_single() || is_page()  ) {
-		wp_enqueue_style('href-flags-manager', plugin_dir_path( __FILE__ ) . 'css/style.css' );
+		wp_enqueue_style('href-flags-manager', plugin_dir_url( __FILE__ ) . 'css/style.css' );
 	}
 }
 
