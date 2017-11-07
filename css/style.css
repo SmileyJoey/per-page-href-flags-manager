@@ -2,6 +2,11 @@
 #language-container .languages {
   display: block;
 }
+#language-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 #language-container .language-text {
   margin: 10px;
 }

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Per Page Href Flags Manager
  * Description: This plugin adds Href links on per page level including a flag.
- * Version: 1.0.5
+ * Version: 1.0.6
  * Author: Better Collective - Hanning Høegh
  * License: GPL2
  */
