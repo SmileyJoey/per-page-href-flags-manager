@@ -13,8 +13,8 @@ define( 'HF_PATH', plugin_dir_path( __FILE__ ) );
     Plugin update checker.
 \*---------------------------*/
 require 'plugin-update-checker/plugin-update-checker.php';
-$className = PucFactory::getLatestClassVersion('PucGitHubChecker');
-$myUpdateChecker = new $className(
+$className2 = PucFactory::getLatestClassVersion('PucGitHubChecker');
+$myUpdateChecker2 = new $className2(
     'https://github.com/SmileyJoey/per-page-href-flags-manager/',
     __FILE__,
     'master'

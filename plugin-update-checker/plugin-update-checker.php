@@ -1,13 +1,13 @@
 <?php
 /**
- * Plugin Update Checker Library 3.1
+ * Plugin Update Checker Library 3.2
  * http://w-shadow.com/
  * 
  * Copyright 2016 Janis Elsts
  * Released under the MIT license. See license.txt for details.
  */
 
-if ( !class_exists('PluginUpdateChecker_3_1', false) ):
+if ( !class_exists('PluginUpdateChecker_3_2', false) ):
 
 /**
  * A custom plugin update checker. 
@@ -17,7 +17,7 @@ if ( !class_exists('PluginUpdateChecker_3_1', false) ):
  * @version 3.0
  * @access public
  */
-class PluginUpdateChecker_3_1 {
+class PluginUpdateChecker_3_2 {
 	public $metadataUrl = ''; //The URL of the plugin's metadata file.
 	public $pluginAbsolutePath = ''; //Full path of the main plugin file.
 	public $pluginFile = '';  //Plugin filename relative to the plugins directory. Many WP APIs use this to identify plugins.
@@ -72,7 +72,7 @@ class PluginUpdateChecker_3_1 {
 		}
 
 		$this->scheduler = $this->createScheduler($checkPeriod);
-		$this->upgraderStatus = new PucUpgraderStatus_3_1();
+		$this->upgraderStatus = new PucUpgraderStatus_3_2();
 
 		$this->installHooks();
 	}
@@ -84,10 +84,10 @@ class PluginUpdateChecker_3_1 {
 	 * and substitute their own scheduler.
 	 *
 	 * @param int $checkPeriod
-	 * @return PucScheduler_3_1
+	 * @return PucScheduler_3_2
 	 */
 	protected function createScheduler($checkPeriod) {
-		return new PucScheduler_3_1($this, $checkPeriod);
+		return new PucScheduler_3_2($this, $checkPeriod);
 	}
 	
 	/**
@@ -165,7 +165,7 @@ class PluginUpdateChecker_3_1 {
 	 * @uses wp_remote_get()
 	 * 
 	 * @param array $queryArgs Additional query arguments to append to the request. Optional.
-	 * @return PluginInfo_3_1
+	 * @return PluginInfo_3_2
 	 */
 	public function requestInfo($queryArgs = array()){
 		//Query args to append to the URL. Plugins can add their own by using a filter callback (see addQueryArgFilter()).
@@ -197,7 +197,7 @@ class PluginUpdateChecker_3_1 {
 		$status = $this->validateApiResponse($result);
 		$pluginInfo = null;
 		if ( !is_wp_error($status) ){
-			$pluginInfo = PluginInfo_3_1::fromJson($result['body']);
+			$pluginInfo = PluginInfo_3_2::fromJson($result['body']);
 			if ( $pluginInfo !== null ) {
 				$pluginInfo->filename = $this->pluginFile;
 				$pluginInfo->slug = $this->slug;
@@ -248,7 +248,7 @@ class PluginUpdateChecker_3_1 {
 	 *
 	 * @uses PluginUpdateChecker::requestInfo()
 	 *
-	 * @return PluginUpdate_3_1 An instance of PluginUpdate, or NULL when no updates are available.
+	 * @return PluginUpdate_3_2 An instance of PluginUpdate, or NULL when no updates are available.
 	 */
 	public function requestUpdate(){
 		//For the sake of simplicity, this function just calls requestInfo() 
@@ -257,7 +257,7 @@ class PluginUpdateChecker_3_1 {
 		if ( $pluginInfo == null ){
 			return null;
 		}
-		$update = PluginUpdate_3_1::fromPluginInfo($pluginInfo);
+		$update = PluginUpdate_3_2::fromPluginInfo($pluginInfo);
 
 		//Keep only those translation updates that apply to this site.
 		$update->translations = $this->filterApplicableTranslations($update->translations);
@@ -356,7 +356,7 @@ class PluginUpdateChecker_3_1 {
 	 * Check for plugin updates.
 	 * The results are stored in the DB option specified in $optionName.
 	 *
-	 * @return PluginUpdate_3_1|null
+	 * @return PluginUpdate_3_2|null
 	 */
 	public function checkForUpdates(){
 		$installedVersion = $this->getInstalledVersion();
@@ -399,7 +399,7 @@ class PluginUpdateChecker_3_1 {
 		}
 
 		if ( isset($state, $state->update) && is_object($state->update) ) {
-			$state->update = PluginUpdate_3_1::fromObject($state->update);
+			$state->update = PluginUpdate_3_2::fromObject($state->update);
 		}
 		return $state;
 	}
@@ -413,7 +413,7 @@ class PluginUpdateChecker_3_1 {
 	 */
 	private function setUpdateState($state) {
 		if ( isset($state->update) && is_object($state->update) && method_exists($state->update, 'toStdClass') ) {
-			$update = $state->update; /** @var PluginUpdate_3_1 $update */
+			$update = $state->update; /** @var PluginUpdate_3_2 $update */
 			$state->update = $update->toStdClass();
 		}
 		update_site_option($this->optionName, $state);
@@ -487,7 +487,7 @@ class PluginUpdateChecker_3_1 {
 
 	/**
 	 * @param StdClass|null $updates
-	 * @param PluginUpdate_3_1 $updateToAdd
+	 * @param PluginUpdate_3_2 $updateToAdd
 	 * @return StdClass
 	 */
 	private function addUpdateToList($updates, $updateToAdd) {
@@ -686,7 +686,7 @@ class PluginUpdateChecker_3_1 {
 	 * Uses cached update data. To retrieve update information straight from
 	 * the metadata URL, call requestUpdate() instead.
 	 *
-	 * @return PluginUpdate_3_1|null
+	 * @return PluginUpdate_3_2|null
 	 */
 	public function getUpdate() {
 		$state = $this->getUpdateState(); /** @var StdClass $state */
@@ -932,7 +932,7 @@ class PluginUpdateChecker_3_1 {
 		if ( class_exists('Debug_Bar', false) && file_exists($debugBarPlugin) ) {
 			/** @noinspection PhpIncludeInspection */
 			require_once $debugBarPlugin;
-			$this->debugBarPlugin = new PucDebugBarPlugin_3_1($this);
+			$this->debugBarPlugin = new PucDebugBarPlugin_3_2($this);
 		}
 	}
 
@@ -951,7 +951,7 @@ class PluginUpdateChecker_3_1 {
 
 endif;
 
-if ( !class_exists('PluginInfo_3_1', false) ):
+if ( !class_exists('PluginInfo_3_2', false) ):
 
 /**
  * A container class for holding and transforming various plugin metadata.
@@ -961,7 +961,7 @@ if ( !class_exists('PluginInfo_3_1', false) ):
  * @version 3.0
  * @access public
  */
-class PluginInfo_3_1 {
+class PluginInfo_3_2 {
 	//Most fields map directly to the contents of the plugin's info.json file.
 	//See the relevant docs for a description of their meaning.  
 	public $name;
@@ -995,7 +995,7 @@ class PluginInfo_3_1 {
 	 * returned by an external update API.
 	 * 
 	 * @param string $json Valid JSON string representing plugin info.
-	 * @return PluginInfo_3_1|null New instance of PluginInfo, or NULL on error.
+	 * @return PluginInfo_3_2|null New instance of PluginInfo, or NULL on error.
 	 */
 	public static function fromJson($json){
 		/** @var StdClass $apiResponse */
@@ -1093,7 +1093,7 @@ class PluginInfo_3_1 {
 	
 endif;
 
-if ( !class_exists('PluginUpdate_3_1', false) ):
+if ( !class_exists('PluginUpdate_3_2', false) ):
 
 /**
  * A simple container class for holding information about an available update.
@@ -1103,7 +1103,7 @@ if ( !class_exists('PluginUpdate_3_1', false) ):
  * @version 3.0
  * @access public
  */
-class PluginUpdate_3_1 {
+class PluginUpdate_3_2 {
 	public $id = 0;
 	public $slug;
 	public $version;
@@ -1124,13 +1124,13 @@ class PluginUpdate_3_1 {
 	 * Create a new instance of PluginUpdate from its JSON-encoded representation.
 	 * 
 	 * @param string $json
-	 * @return PluginUpdate_3_1|null
+	 * @return PluginUpdate_3_2|null
 	 */
 	public static function fromJson($json){
 		//Since update-related information is simply a subset of the full plugin info,
 		//we can parse the update JSON as if it was a plugin info string, then copy over
 		//the parts that we care about.
-		$pluginInfo = PluginInfo_3_1::fromJson($json);
+		$pluginInfo = PluginInfo_3_2::fromJson($json);
 		if ( $pluginInfo != null ) {
 			return self::fromPluginInfo($pluginInfo);
 		} else {
@@ -1142,8 +1142,8 @@ class PluginUpdate_3_1 {
 	 * Create a new instance of PluginUpdate based on an instance of PluginInfo.
 	 * Basically, this just copies a subset of fields from one object to another.
 	 * 
-	 * @param PluginInfo_3_1 $info
-	 * @return PluginUpdate_3_1
+	 * @param PluginInfo_3_2 $info
+	 * @return PluginUpdate_3_2
 	 */
 	public static function fromPluginInfo($info){
 		return self::fromObject($info);
@@ -1153,8 +1153,8 @@ class PluginUpdate_3_1 {
 	 * Create a new instance of PluginUpdate by copying the necessary fields from 
 	 * another object.
 	 *  
-	 * @param StdClass|PluginInfo_3_1|PluginUpdate_3_1 $object The source object.
-	 * @return PluginUpdate_3_1 The new copy.
+	 * @param StdClass|PluginInfo_3_2|PluginUpdate_3_2 $object The source object.
+	 * @return PluginUpdate_3_2 The new copy.
 	 */
 	public static function fromObject($object) {
 		$update = new self();
@@ -1219,7 +1219,7 @@ class PluginUpdate_3_1 {
 	
 endif;
 
-if ( !class_exists('PucScheduler_3_1', false) ):
+if ( !class_exists('PucScheduler_3_2', false) ):
 
 /**
  * The scheduler decides when and how often to check for updates.
@@ -1227,13 +1227,13 @@ if ( !class_exists('PucScheduler_3_1', false) ):
  *
  * @version 3.0
  */
-class PucScheduler_3_1 {
+class PucScheduler_3_2 {
 	public $checkPeriod = 12; //How often to check for updates (in hours).
 	public $throttleRedundantChecks = false; //Check less often if we already know that an update is available.
 	public $throttledCheckPeriod = 72;
 
 	/**
-	 * @var PluginUpdateChecker_3_1
+	 * @var PluginUpdateChecker_3_2
 	 */
 	protected $updateChecker;
 
@@ -1242,7 +1242,7 @@ class PucScheduler_3_1 {
 	/**
 	 * Scheduler constructor.
 	 *
-	 * @param PluginUpdateChecker_3_1 $updateChecker
+	 * @param PluginUpdateChecker_3_2 $updateChecker
 	 * @param int $checkPeriod How often to check for updates (in hours).
 	 */
 	public function __construct($updateChecker, $checkPeriod) {
@@ -1398,7 +1398,7 @@ class PucScheduler_3_1 {
 endif;
 
 
-if ( !class_exists('PucUpgraderStatus_3_1', false) ):
+if ( !class_exists('PucUpgraderStatus_3_2', false) ):
 
 /**
  * A utility class that helps figure out which plugin WordPress is upgrading.
@@ -1407,7 +1407,7 @@ if ( !class_exists('PucUpgraderStatus_3_1', false) ):
  * Core classes like Plugin_Upgrader don't expose the plugin file name during an in-progress update (AFAICT).
  * This class uses a few workarounds and heuristics to get the file name.
  */
-class PucUpgraderStatus_3_1 {
+class PucUpgraderStatus_3_2 {
 	private $upgradedPluginFile = null; //The plugin that is currently being upgraded by WordPress.
 
 	public function __construct() {
@@ -1572,7 +1572,7 @@ class PucFactory {
 	 * @param int $checkPeriod
 	 * @param string $optionName
 	 * @param string $muPluginFile
-	 * @return PluginUpdateChecker_3_1
+	 * @return PluginUpdateChecker_3_2
 	 */
 	public static function buildUpdateChecker($metadataUrl, $pluginFile, $slug = '', $checkPeriod = 12, $optionName = '', $muPluginFile = '') {
 		$class = self::getLatestClassVersion('PluginUpdateChecker');
@@ -1635,7 +1635,7 @@ endif;
 require_once(dirname(__FILE__) . '/github-checker.php');
 
 //Register classes defined in this file with the factory.
-PucFactory::addVersion('PluginUpdateChecker', 'PluginUpdateChecker_3_1', '3.1');
-PucFactory::addVersion('PluginUpdate', 'PluginUpdate_3_1', '3.1');
-PucFactory::addVersion('PluginInfo', 'PluginInfo_3_1', '3.1');
-PucFactory::addVersion('PucGitHubChecker', 'PucGitHubChecker_3_1', '3.1');
+PucFactory::addVersion('PluginUpdateChecker', 'PluginUpdateChecker_3_2', '3.2');
+PucFactory::addVersion('PluginUpdate', 'PluginUpdate_3_2', '3.2');
+PucFactory::addVersion('PluginInfo', 'PluginInfo_3_2', '3.2');
+PucFactory::addVersion('PucGitHubChecker', 'PucGitHubChecker_3_2', '3.2');
