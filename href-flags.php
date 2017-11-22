@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Per Page Href Flags Manager
  * Description: This plugin adds Href links on per page level including a flag.
- * Version: 1.0.6
+ * Version: 1.0.7
  * Author: Better Collective - Hanning Høegh
  * License: GPL2
  */
@@ -20,6 +20,8 @@ $myUpdateChecker2 = new $className2(
     'master'
 );
 
+
+
 /*---------------------------*\
     Load plugin style CSS.
 \*---------------------------*/
@@ -30,38 +32,7 @@ function plugin_scripts_stylesheets() {
 	}
 }
 
-/*----------------------------------------------------------------------*\
-    If ACF is not installed, include it, without needing to install it.
-\*----------------------------------------------------------------------*/
-// if( !class_exists('acf') ) {
 
-// 	// 1. customize ACF path
-// 	add_filter('acf/settings/path', 'my_acf_settings_path');
-// 	function my_acf_settings_path( $path ) {
-	 
-// 	    // update path
-// 	    $path = HF_PATH . '/acf/';
-// 	    return $path;
-// 	}
-	 
-
-// 	// 2. customize ACF dir
-// 	add_filter('acf/settings/dir', 'my_acf_settings_dir');
-// 	function my_acf_settings_dir( $dir ) {
-	 
-// 	    // update path
-// 	    $dir = HF_PATH . '/acf/';
-// 	    return $dir;
-// 	}
-	 
-
-// 	// 3. Hide ACF field group menu item
-// 	// add_filter('acf/settings/show_admin', '__return_false');
-
-
-// 	// 4. Include ACF
-// 	include_once( HF_PATH . '/acf/acf.php' );
-// }
 
 /*-------------------------*\
     NOTICE ABOUT ACF PRO
@@ -196,6 +167,9 @@ function right_after_content($content){
 							break;
 						case 'CZ':
 						 	$language_flag = 'flag-20-Czech-republic';
+							break;
+						case 'CY':
+						 	$language_flag = 'flag-20-Cyprus';
 							break;
 						/* D */
 						case 'DK':
