@@ -76,6 +76,11 @@
   background-position: 0px -120px;
 }
 
+.flag-20-Colombia,
+.flag-20-Colombia.menu-item > a:before {
+  background-position: -140px -60px;
+}
+
 .flag-20-China,
 .flag-20-China.menu-item > a:before {
   background-position: -140px 0px;
@@ -212,6 +217,11 @@
 }
 
 /* P */
+.flag-20-Peru,
+.flag-20-Peru.menu-item > a:before {
+  background-position: 20px -220px;
+}
+
 .flag-20-Philippines,
 .flag-20-Philippines.menu-item > a:before {
   background-position: -60px -260px;

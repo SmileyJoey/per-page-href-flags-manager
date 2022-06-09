@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Per Page Href Flags Manager
  * Description: This plugin adds Href links on per page level including a flag.
- * Version: 1.0.7
+ * Version: 1.0.8
  * Author: Better Collective - Hanning Høegh
  * License: GPL2
  */
@@ -159,6 +159,9 @@ function right_after_content($content){
 						case 'CA':
 						 	$language_flag = 'flag-20-Canada';
 							break;
+						case 'CO':
+							$language_flag = 'flag-20-Colombia';
+							break;
 						case 'CN':
 						 	$language_flag = 'flag-20-China';
 							break;
@@ -245,6 +248,9 @@ function right_after_content($content){
 						 	$language_flag = 'flag-20-Norway';
 							break;
 						/* P */
+						case 'PE':
+							$language_flag = 'flag-20-Peru';
+							break;
 						case 'PH':
 						 	$language_flag = 'flag-20-Philippines';
 							break;
@@ -303,7 +309,7 @@ function right_after_content($content){
 						case 'UG':
 						 	$language_flag = 'flag-20-Uganda';
 							break;
-						/* V */		
+						/* V */
 						case 'VN':
 						 	$language_flag = 'flag-20-Vietnam';
 							break;
